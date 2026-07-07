@@ -24,8 +24,8 @@ ssh:
 	ln -sf $(CURDIR)/ssh/allowed_signers ~/.ssh/allowed_signers
 
 iterm2:
-	mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
-	ln -sf $(CURDIR)/iterm2/tonic.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/tonic.json
+	rm -f ~/Library/Application\ Support/iTerm2/DynamicProfiles/tonic.json
+	python3 $(CURDIR)/iterm2/install_profile.py $(CURDIR)/iterm2/tonic.json
 	defaults write com.googlecode.iterm2 HideTab -bool false
 	defaults write com.googlecode.iterm2 QuitWhenAllWindowsClosed -bool true
 	defaults write com.googlecode.iterm2 ShowFullScreenTabBar -bool false
