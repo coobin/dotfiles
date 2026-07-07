@@ -48,6 +48,33 @@ eval "$($HOMEBREW_PREFIX/bin/pyenv init --path)"
 # direnv setup
 eval "$(direnv hook zsh)"
 
+# proxy setup
+if nc -z 10.0.0.2 1069 2>/dev/null; then
+  export https_proxy="http://10.0.0.2:1069"
+  export http_proxy="http://10.0.0.2:1069"
+  export all_proxy="socks5://10.0.0.2:1069"
+fi
+
+# aliases
+alias ll="ls -lahF --color "
+
+ytdl-best() { yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio/best' --merge-output-format mp4 "$1"; }
+ytdl-mp3() {
+  if [ -z "$1" ]; then
+    echo "Usage: ytdl-mp3 <youtube-url>"
+    return 1
+  fi
+
+  yt-dlp \
+    -f "bestaudio" \
+    --extract-audio \
+    --audio-format mp3 \
+    --audio-quality 0 \
+    --embed-thumbnail \
+    --continue \
+    "$1"
+}
+
 # theme config
 SPACESHIP_PROMPT_ASYNC="true"
 SPACESHIP_PROMPT_ORDER=(
