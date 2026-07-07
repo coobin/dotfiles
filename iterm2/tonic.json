@@ -423,7 +423,7 @@
       "Cursor Type": 2,
       "AWDS Pane Directory": "",
       "Blur": true,
-      "Normal Font": "JetBrainsMono NF 14",
+      "Normal Font": "JetBrains Mono 14",
       "Vertical Spacing": 1,
       "Disable Printing": false,
       "Ansi 7 Color": {
@@ -470,7 +470,7 @@
       "AWDS Window Option": "No",
       "Initial Use Transparency": true,
       "Bound Hosts": [],
-      "Non Ascii Font": "JetBrainsMonoNL NF 14",
+      "Non Ascii Font": "JetBrains Mono NL 14",
       "Ansi 13 Color": {
         "Red Component": 0.7764706015586853,
         "Color Space": "Calibrated",
