@@ -1,5 +1,15 @@
 # vim: ft=sshconfig
 
+# 本机私有主机（IP、内网、密钥等敏感配置放这里，不入库）
+Include ~/.ssh/config.local
+
+Host github.com
+    HostName ssh.github.com
+    Port 443
+    User git
+    TCPKeepAlive yes
+    IdentitiesOnly no
+
 Host *
     ServerAliveInterval 30
     AddKeysToAgent yes
