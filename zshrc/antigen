@@ -49,7 +49,7 @@ eval "$($HOMEBREW_PREFIX/bin/pyenv init --path)"
 eval "$(direnv hook zsh)"
 
 # proxy setup
-if nc -z 10.0.0.2 1069 2>/dev/null; then
+if nc -z -G 1 10.0.0.2 1069 2>/dev/null; then
   export https_proxy="http://10.0.0.2:1069"
   export http_proxy="http://10.0.0.2:1069"
   export all_proxy="socks5://10.0.0.2:1069"
