@@ -2,7 +2,7 @@
 
 [user]
 	name = Kay
-	email = hekaixuan@outlook.com
+	email = coobin@users.noreply.github.com
 	signingkey = ~/.ssh/macmini.pub
 
 [gpg]

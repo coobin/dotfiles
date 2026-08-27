@@ -50,10 +50,13 @@ eval "$($HOMEBREW_PREFIX/bin/pyenv init --path)"
 eval "$(direnv hook zsh)"
 
 # proxy setup
-if nc -z -G 1 10.0.0.2 1069 2>/dev/null; then
-  export https_proxy="http://10.0.0.2:1069"
-  export http_proxy="http://10.0.0.2:1069"
-  export all_proxy="socks5://10.0.0.2:1069"
+if nc -z -G 1 127.0.0.1 1069 2>/dev/null; then
+  export http_proxy="http://127.0.0.1:1069"
+  export https_proxy="http://127.0.0.1:1069"
+  export all_proxy="socks5://127.0.0.1:1069"
+  export HTTP_PROXY="http://127.0.0.1:1069"
+  export HTTPS_PROXY="http://127.0.0.1:1069"
+  export ALL_PROXY="socks5://127.0.0.1:1069"
 fi
 
 # aliases
